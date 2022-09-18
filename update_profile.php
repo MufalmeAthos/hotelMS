@@ -15,23 +15,10 @@ if(isset($update))
 mysqli_query($con,"update create_account set name='$fname',email='$email',password='$Passw',mobile='$mobi',address='$addr',gender='$gend',country='$countr'where email='$eid'");
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Online Hotel.Com</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <link href="css/style.css"rel="stylesheet"/>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai" rel="stylesheet">
-</head>
-<body style="margin-top:50px;">
-  <?php 
-include('Menu Bar.php');
-  ?>
+
+<?php 
+  include('Menu Bar.php');
+?>
 <div class="container-fluid"style="color:#000;"> <!-- Primary Id-->
   <div class="container">
     <h1 style="background-color:#ed2553; border-radius:50px;display:inline-block;"><b><font color="#080808">Update Account?</font></b></h1>
