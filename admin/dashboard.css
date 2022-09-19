@@ -17,6 +17,14 @@ body {
   border-bottom: 1px solid #eee;
 }
 
+.navbar{
+  top:0;
+  z-index: 12;
+  position: fixed;
+  width: 100%;
+  background-color:#fff;
+}
+
 /*
  * Top navigation
  * Hide default border to remove 1px line.
@@ -103,8 +111,3 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
-/* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }

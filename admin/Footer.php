@@ -13,13 +13,13 @@ $msg= "<h4 style='color:green;'>feedback sent successfully</h4>";
     <div class="container-fluid">
 	<div class="col-sm-4 hov">
     <p class="text-justify" ><p style="color:white;">Furaha and Masabo Hotel.Com</p><br>
-      <center><a href="../about.php" class="btn btn-danger"><b>Read More..</b></a></center><br><br><br>
+      <center><a href="../about.php" class="btn btn-primary"><b>Read More..</b></a></center><br><br><br>
  <?php
   include('Social ican.php')
 ?>
 	</div>&nbsp;&nbsp;
 	<div class="col-sm-4 text-justify">
-	       <h3 style="color:#cdd51f;">Contact Us</h3>
+	       <h3 style="" class="text-primary">Contact Us</h3>
          <p style="color:white;"><strong>Address:&nbsp;</strong>Gisozi Ulk Computer Science</p>
       <p style="color:white;"><strong>Email-Id:&nbsp;</strong>furaha@gmail.com</p>
       <p style="color:white;"><strong>Contact Us:&nbsp;</strong>0780465854<br><br><br>

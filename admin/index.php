@@ -24,30 +24,16 @@ if(isset($login))
 	}
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Furaha and Masabo Hotel.Com</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <link href="../css/style.css"rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Akronim|Libre+Baskerville" rel="stylesheet">
-</head>
-<body id="primary"style="margin-top:50px;">
-	<?php
+<?php
 include('Menu Bar.php');
 	?>
 <div class="container-fluid"> <!-- Primary Id-->
   <div class="container">
     <div class="row"><br>
       <div class="col-sm-4"></div>
-		<div class="col-sm-4 text-center"style="box-shadow:2px 2px 2px;background-color:blue;">
+		<div class="col-sm-4 text-center"style="box-shadow:2px 2px 2px;background-color:#c5c5c5;">
 			
-			<h1 align="center"><b><font style="font-family: 'Libre Baskerville', serif;text-shadow:5px 5px #000;">Admin Login </font></b></h1>
+			<h1 class="text-primary"><b>Admin Login </b></h1>
 
           <img src="../image/clipart/user.png"alt="Bird" width="200" height="170"style="padding-top:30px;">
 

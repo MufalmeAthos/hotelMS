@@ -8,6 +8,7 @@
 	}
 </script>
 <table class="table table-bordered table-striped table-hover">
+	<h1>Slides</h1><hr>
 	<tr>
 	<td colspan="5"><a href="dashboard.php?option=add_slider" class="btn btn-primary">Add New</a></td>
 	</tr>

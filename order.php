@@ -22,7 +22,7 @@ $eid=$_SESSION['create_account_logged_in'];
                     <th>Room Type</th>
                     <th>Check In Date</th>
                     <th>Check In Time</th>
-                    <th>Check Out Date</th>]
+                    <th>Check Out Date</th>
                     <th>Pay</ht>
                     <th>Occupancy</th>
 					<th>Cancel</th>

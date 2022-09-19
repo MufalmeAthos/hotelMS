@@ -81,15 +81,22 @@ include('connection.php');
 	while($r_res=mysqli_fetch_assoc($sql))
 	{
 	?>
-	<div class="col-sm-4">
-    <a href="room_details.php?room_id=<?php echo $r_res['room_id']; ?>"> <img src="image/rooms/<?php echo $r_res['image']; ?>"class="img-responsive thumbnail"alt="Image"id="img1"></a>  <!--Id Is Img-->
-      <h4 class="Room_Text" style="color: white; font-family: Franklin Gothic Medium; height: 10px">[ <?php echo $r_res['type']; ?>]</h4><br>
-       <h4 class="price" style="color: white; font-family: Franklin Gothic Medium; height: 10px"> <?php echo $r_res['price']; ?> &nbsp Frw</h4>
 
-     <center> <p class="text-justify" style="text-align: center; color: white; font-size: 30px;"><?php echo substr($r_res['details'],0,100); ?></p><br></center>
+	<div class="col-sm-4">
+    <a href="room_details.php?room_id=<?php echo $r_res['room_id']; ?>"> 
+      <img src="image/rooms/<?php echo $r_res['image']; ?>" class="img-responsive thumbnail"alt="Image"id="img1">
+    </a>  <!--Id Is Img-->
+      <h4 class="Room_Text" style="color: white; font-family: Franklin Gothic Medium; height: 10px">[ <?php echo $r_res['type']; ?> ]</h4><br>
+      <h4 class="price" style="color: white;">Price: <?php echo $r_res['price']; ?> &nbsp Frw</h4>
+      <h4 class="price" style="color: white;">Room No: <?php echo $r_res['room_no']; ?></h4>
+
+     <center> 
+      <p class="text-justify" style="text-align: center; color: white; font-size: 30px;"><?php echo substr($r_res['details'],0,100); ?></p><br>
+     </center>
 	    <a href="room_details.php?room_id=<?php echo $r_res['room_id']; ?>" class="btn btn-danger text-center">Read More</a><br><br>
-    </div>
-	<?php } ?>
+  </div>
+
+<?php } ?>
   </div>
   </div>
 </div>

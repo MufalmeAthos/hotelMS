@@ -1,8 +1,12 @@
 
-<div style="position:absolute;top:200px; right:360px" id="printableArea">
+<div style="" id="printableArea">
 
 <table class="table table-bordered table-striped table-hover">
-	<h1>Payment</h1> <button onclick="Print();">Print</button><hr>
+	<h1>
+		Payment 
+		<button onclick="Print();" class="btn btn-primary pull-right"><i class="fa fa-print"></i> Print</button>
+	</h1> 
+	<hr>
 
 	<tr>
 		<th>Sr No</th>

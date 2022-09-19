@@ -15,10 +15,10 @@
         <img src="imgicon/default1.png" alt="Jane" style="width:100%">
         <div class="about_description">
           <h2>FURAHA Irene</h2>
-          <p class="title">CEO & Founder</p>
+          <p class=" text-primary">CEO & Founder</p>
           <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-          <p>furaha@gmail.com</p>
-          <p><button class="button">Contact</button></p>
+          <p class="text-secondary"><i class="fa fa-envelope"></i> irfuraha@gmail.com</p>
+          <button class=" btn btn-primary"><i class="fa fa-phone"></i> Contact</button>
         </div>
       </div>
     </div>
@@ -28,10 +28,10 @@
         <img src="imgicon/default1.png" alt="Mike" style="width:100%">
         <div class="about_description">
           <h2>Masabo Chance</h2>
-          <p class="title">Manager</p>
+          <p class=" text-primary">Manager</p>
           <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-          <p>masabo@gmail.com</p>
-          <p><button class="button">Contact</button></p>
+          <p class="text-secondary"><i class="fa fa-envelope"></i> masabo@gmail.com</p>
+          <button class=" btn btn-primary"><i class="fa fa-phone"></i> Contact</button>
         </div>
       </div>
     </div>
@@ -41,10 +41,10 @@
         <img src="imgicon/default1.png" alt="John" style="width:100%">
         <div class="about_description">
           <h2>Team Leader</h2>
-          <p class="title">Designer</p>
+          <p class=" text-primary">Designer</p>
           <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-          <p>gigs@gmail.com</p>
-          <p><button class="button">Contact</button></p>
+          <p class="text-secondary"><i class="fa fa-envelope"></i> athola@gmail.com</p>
+          <button class=" btn btn-primary"><i class="fa fa-phone"></i> Contact</button>
         </div>
       </div>
     </div>

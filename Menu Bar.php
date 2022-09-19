@@ -1,6 +1,8 @@
 <?php 
 session_start();
-$eid=$_SESSION['create_account_logged_in'];
+if(!empty($_SESSION)):
+  $eid=$_SESSION['create_account_logged_in'];
+endif;
 error_reporting(0);
 ?>
 
@@ -10,13 +12,12 @@ error_reporting(0);
   <title>Online Hotel.Com</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
   <link href="css/style.css"rel="stylesheet"/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
 </head> <!--Head Open  Here-->
 <body style="margin-top:50px;">
 

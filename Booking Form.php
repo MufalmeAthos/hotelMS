@@ -1,13 +1,15 @@
 <?php 
-// include('Menu Bar.php');
+include('Menu Bar.php');
 include('connection.php');
 if($eid=="")
 {
 header('location:Login.php');
 }
+print($eid);
 $sql= mysqli_query($con,"select * from room_booking_details where email='$eid' "); 
 $result=mysqli_fetch_assoc($sql);
-//print_r($result);
+echo var_dump($sql);
+echo var_dump($result);
 extract($_REQUEST);
 error_reporting(1);
 if(isset($savedata))
@@ -31,9 +33,6 @@ if(isset($savedata))
 }
 ?>
 
-<?php
-  include('Menu Bar.php');
-?>
 <div class="container-fluid text-center"id="primary"><!--Primary Id-->
   <h1>[ BOOKING Form ]</h1><br>
   <div class="container">
@@ -41,17 +40,17 @@ if(isset($savedata))
       <?php echo @$msg; ?>
       <!--Form Containe Start Here-->
      <form class="form-horizontal" method="post">
-       <!-- <div class="col-sm-6"> -->
-         <!-- <div class="form-group">
+       <div class="col-sm-6">
+         <div class="form-group">
            <div class="row">
               <div class="control-label col-sm-4"><h4> Name :</h4></div>
                 <div class="col-sm-8">
                  <input type="text" value="<?php echo $result['name']; ?>" readonly="readonly" class="form-control" name="name" placeholder="Enter Your Frist Name"required>
           </div>
         </div>
-      </div> -->
+      </div>
 
-        <!-- <div class="form-group">
+        <div class="form-group">
           <div class="row">
            <div class="control-label col-sm-4"><h4>Email :</h4></div>
           <div class="col-sm-8">
@@ -85,18 +84,18 @@ if(isset($savedata))
               <input type="text" class="form-control" readonly="readonly"  value="<?php echo $result['country']; ?>" name="city" placeholder="Enter Your City Name"required>
           </div>
         </div>
-        </div> -->
+        </div>
 
-        <!-- <div class="form-group">
+        <div class="form-group">
           <div class="row">
            <div class="control-label col-sm-4"><h4></h4></div>
           <div class="col-sm-8">
               <input type="hidden" name="state" class="form-control"placeholder="Enter Your State Name"required>
           </div>
         </div>
-        </div> -->
+        </div>
 
-		      <!-- <div class="form-group">
+		      <div class="form-group">
             <div class="row">
            <div class="control-label col-sm-4"><h4></h4></div>
           <div class="col-sm-8">
@@ -104,7 +103,7 @@ if(isset($savedata))
           </div>
         </div>
         </div>
-        </div> -->
+        </div>
 
            <div class="col-sm-6">
             <div class="form-group">
