@@ -12,7 +12,9 @@
 		<th>Check Out Time</th>
 		<th>Check Out Date</th>
 		<th>Occupancy</th>
+		<th>Status</th>
 		<th>Cancel Order</th>
+		<th>Action</th>
 	</tr>
 
 <?php 
@@ -34,7 +36,33 @@ $oid=$res['id'];
 		<td><?php echo $res['check_in_time']; ?></td>
 		<td><?php echo $res['check_out_date']; ?></td>
 		<td><?php echo $res['Occupancy']; ?></td>
-		<td><a style="color:red" href="cancel_order.php?booking_id=<?php echo $oid; ?>">Cancel</a></td>
+		<td><?php echo $res['status']; ?></td>
+		<td>
+<?php 
+	if($res['status'] != 'Canceled'):
+?>
+			<a style="color:red" href="cancel_order.php?booking_id=<?php echo $oid; ?>">Cancel</a>
+<?php
+	else:
+		echo '-';
+	endif;
+?>
+		</td>
+		<td>
+<?php 
+	if($res['status'] == 'Pending'):
+?>
+			<a style="color:green" href="approve_order.php?booking_id=<?php echo $oid; ?>">Approve</a>
+<?php
+	elseif($res['status'] == 'Approved'):
+?>
+			<a style="color:orange" href="deapprove_order.php?booking_id=<?php echo $oid; ?>">Deapprove</a>
+<?php
+	else:
+		echo '-';
+	endif;
+?>
+		</td>
 	</td>
 	</tr>
 <?php 	

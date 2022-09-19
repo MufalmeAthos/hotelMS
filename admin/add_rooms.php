@@ -27,7 +27,14 @@ if(isset($add))
 	
 	<tr>	
 		<th>Room Type</th>
-		<td><input type="text" name="type"  class="form-control"/>
+		<td>
+			<select  name="type"  class="form-control">
+                    <option >Deluxe Room</option>
+                    <option>Luxurious Suite</option>
+                    <option>Standard Room</option>
+                    <option>Suite Room</option>
+                    <option>Twin Deluxe Room</option>
+                </select>
 		</td>
 	</tr>
 	

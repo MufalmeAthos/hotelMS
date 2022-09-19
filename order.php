@@ -18,14 +18,14 @@ $eid=$_SESSION['create_account_logged_in'];
                     <th>Email</th>
                     <th>Mobile Number</th>
                     <th>Address</th>
-                    <th>Contury</th>
+                    <th>Country</th>
                     <th>Room Type</th>
                     <th>Check In Date</th>
                     <th>Check In Time</th>
                     <th>Check Out Date</th>
                     <th>Pay</ht>
                     <th>Occupancy</th>
-					<th>Cancel</th>
+					          <th>Cancel</th>
                </tr>
 
                <?php 
@@ -43,8 +43,13 @@ echo "<td>".$result['room_type']."</td>";
 echo "<td>".$result['check_in_date']."</td>";
 echo "<td>".$result['check_in_time']."</td>";
 echo "<td>".$result['check_out_date']."</td>";
+echo "<td>".$result['status']."</td>";
 echo "<td>".$result['Occupancy']."</td>";
-echo "<td><a href='cancel_order.php?order_id=$oid' style='color:Red'>Cancel</a></td>";
+if($result['status'] != 'Canceled'):
+    echo "<td><a href='cancel_order.php?order_id=$oid' style='color:Red'>Cancel</a></td>";
+else:
+  echo "<td> - </td>";
+endif;
 echo "</tr>";
 }                         
                ?> 

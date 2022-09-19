@@ -71,7 +71,8 @@ $res=mysqli_fetch_assoc($sql);
       <img src="image/icon/wifi.png"  class="img-responsive">
        <a href="Login.php" class="btn btn-primary" ><i class="fa fa-credit-card"></i> Book Now</a>
       <a href="https://sandbox-flw-web-v3.herokuapp.com/pay/70std7ulfc8h" class="btn btn-primary"><i class="fa fa-money"></i> Pay Now</a><br><br><br><br>
-      </div>
+      <!-- <a href="https://sandbox-flw-web-v3.herokuapp.com/pay/70std7ulfc8h" class="btn btn-primary"><i class="fa fa-money"></i> Pay Now</a><br><br><br><br> -->
+    </div> <br><br>
 	</div>
 				<div class="col-sm-3">
 					<div class="panel panel-primary">

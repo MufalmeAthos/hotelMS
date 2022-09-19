@@ -5,29 +5,29 @@ if($eid=="")
 {
 header('location:Login.php');
 }
-print($eid);
-$sql= mysqli_query($con,"select * from room_booking_details where email='$eid' "); 
-$result=mysqli_fetch_assoc($sql);
-echo var_dump($sql);
-echo var_dump($result);
+
+// $sql    = mysqli_query($con,"select * from room_booking_details where email='$eid' "); 
+$sql    = mysqli_query($con,"select * from create_account where email='$eid' "); 
+$result = mysqli_fetch_assoc($sql);
+
 extract($_REQUEST);
 error_reporting(1);
 if(isset($savedata))
 {
-  $sql= mysqli_query($con,"select * from room_booking_details where email='$email' and room_type='$room_type' ");
+  $sql = mysqli_query($con,"select * from room_booking_details where email='$email' and room_type='$room_type' ");
   if(mysqli_num_rows($sql)) 
   {
-  $msg= "<h1 style='color:black'>You have already booked this room</h1>";    
+    $msg = "<h1 style='color:black'>You have already booked this room</h1>";    
   }
   else
   {
 
-   $sql="insert into room_booking_details(name,email,phone,address,city,state,zip,contry,room_type,Occupancy,check_in_date,check_in_time,check_out_date) 
-  values('$name','$email','$phone','$address','$city','$state','$zip','$country',
-  '$room_type','$Occupancy','$cdate','$ctime','$codate')";
+    $sql = "insert into room_booking_details(name,email,phone,address,city,state,zip,contry,room_type,Occupancy,check_in_date,check_in_time,check_out_date,status) 
+            values('$name','$email','$phone','$address','$city','$state','$zip','$country',
+            '$room_type','$Occupancy','$cdate','$ctime','$codate','Pending')";
    if(mysqli_query($con,$sql))
    {
-   $msg= "<h1 style='color:blue'>You have Successfully booked this room</h1><h2><a href='order.php'>View </a></h2>"; 
+      $msg= "<h1 style='color:blue'>You have Successfully booked this room</h1><h2><a href='order.php'>View </a></h2>"; 
    }
   }
 }
@@ -81,7 +81,7 @@ if(isset($savedata))
           <div class="row">
            <div class="control-label col-sm-4"><h4>Country</h4></div>
           <div class="col-sm-8">
-              <input type="text" class="form-control" readonly="readonly"  value="<?php echo $result['country']; ?>" name="city" placeholder="Enter Your City Name"required>
+              <input type="text" class="form-control" readonly="readonly"  value="<?php echo $result['country']; ?>" name="country" placeholder="Enter Your City Name"required>
           </div>
         </div>
         </div>
@@ -110,13 +110,13 @@ if(isset($savedata))
               <div class="row">
                 <div class="control-label col-sm-5"><h4>Room Type:</h4></div>
                   <div class="col-sm-7">
-                <select class="form-control" name="room_type"required>
-                  <option>Deluxe Room</option>
-                  <option>Luxurious Suite</option>
-                  <option>Standard Room</option>
-                  <option>Suite Room</option>
-                  <option>Twin Deluxe Room</option>
-               </select>
+                  <select class="form-control" name="room_type"required>
+                    <option>Deluxe Room</option>
+                    <option>Luxurious Suite</option>
+                    <option>Standard Room</option>
+                    <option>Suite Room</option>
+                    <option>Twin Deluxe Room</option>
+                </select>
               </div>
               </div>
             </div>
@@ -127,7 +127,7 @@ if(isset($savedata))
               <div class="row">
                 <div class="control-label col-sm-5"><h4>check In Date :</h4></div>
                   <div class="col-sm-7">
-                  <input type="date" name="cdate" class="form-control"required>
+                  <input type="date" name="cdate" class="form-control" min="<?=date('Y-m-d')?>" required>
                   </div>
               </div>
             </div>
@@ -138,7 +138,7 @@ if(isset($savedata))
               <div class="row">
                  <div class="control-label col-sm-5"><h4>Check In Time:</h4></div>
                    <div class="col-sm-7">
-                    <input type="time" name="ctime" class="form-control"required>
+                    <input type="time" name="ctime" class="form-control" required>
                   </div>
               </div>
             </div>
@@ -148,24 +148,29 @@ if(isset($savedata))
               <div class="row">
                 <div class="control-label col-sm-5"><h4>Check Out Date :</h4></div>
                 <div class="col-sm-7">
-                  <input type="date" name="codate" class="form-control"required>
+                  <input type="date" name="codate" class="form-control" min="<?=date('Y-m-d')?>" required>
                 </div> 
               </div>
             </div>
           </div>
-          <!-- <div class="col-sm-6"> -->
+          <div class="col-sm-6">
             <div class="form-group">
-              <div class="row">
-                <label class="control-label col-sm-5"><h4 id="top">Occupancy :</h4></label>
-                <div class="col-sm-7">
-                  <div class="radio-inline"><input type="radio" value="single" name="Occupancy"required >Single</div>
-                  <div class="radio-inline"><input type="radio" value="twin" name="Occupancy" required>Twin</div>
-                  <div class="radio-inline"><input type="radio" value="dubble" name="Occupancy" required>Dubble</div>
-                <!-- </div>  -->
-              <!-- </div>
-            </div> -->
-            <input type="submit"value="submit" name="savedata" class="btn btn-danger my-9"required/>
+                <div class="row">
+                  <label class="control-label col-sm-5"><h4 id="top">Occupancy :</h4></label>
+                  <div class="col-sm-7">
+                    <div class="radio-inline"><input type="radio" value="single" name="Occupancy"required >Single</div>
+                    <div class="radio-inline"><input type="radio" value="twin" name="Occupancy" required>Twin</div>
+                    <div class="radio-inline"><input type="radio" value="double" name="Occupancy" required>Double</div>
+                  </div> 
+                </div>
+            </div>
           </div>
+          <div class="col-sm-6">
+              <input type="submit" value="Submit" name="savedata" class="btn btn-primary pull-right my-9"required/>
+          </div>
+          <br><br>
+
+
           </form><br>
         </div>
       </div>
